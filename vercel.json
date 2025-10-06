@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "client/index.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "outputDirectory": "dist/public",
+  "framework": null
+}
+

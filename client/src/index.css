@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 75%);
+  --popover: hsl(0, 0%, 5%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 5%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 10%);
+  --primary: hsl(0, 0%, 100%);
+  --primary-foreground: hsl(0, 0%, 0%);
+  --secondary: hsl(0, 0%, 10%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(0, 0%, 15%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(0, 0%, 100%);
+  --radius: 0.5rem;
+  
+  /* Space theme colors */
+  --space-black: hsl(0, 0%, 0%);
+  --cosmic-silver: hsl(0, 0%, 75%);
+  --star-white: hsl(0, 0%, 100%);
+  --nebula-blue: hsl(195, 100%, 50%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 75%);
+  --popover: hsl(0, 0%, 5%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 5%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 10%);
+  --primary: hsl(0, 0%, 100%);
+  --primary-foreground: hsl(0, 0%, 0%);
+  --secondary: hsl(0, 0%, 10%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(0, 0%, 15%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(0, 0%, 80%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Space theme custom styles */
+.bg-space-black {
+  background-color: var(--space-black);
+}
+
+.text-cosmic-silver {
+  color: var(--cosmic-silver);
+}
+
+.text-star-white {
+  color: var(--star-white);
+}
+
+.text-nebula-blue {
+  color: var(--nebula-blue);
+}
+
+.bg-cosmic-silver {
+  background-color: var(--cosmic-silver);
+}
+
+.bg-star-white {
+  background-color: var(--star-white);
+}
+
+.bg-nebula-blue {
+  background-color: var(--nebula-blue);
+}
+
+.border-cosmic-silver {
+  border-color: var(--cosmic-silver);
+}
+
+.border-star-white {
+  border-color: var(--star-white);
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-fira {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Animations */
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes shooting-star {
+  0% { transform: translateX(-100vw) translateY(100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100vw) translateY(0); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skillPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes skillGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 255, 255, 0.2); }
+  100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.animate-shooting-star {
+  animation: shooting-star 2s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-typing {
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-skillPulse {
+  animation: skillPulse 2s ease-in-out infinite;
+}
+
+.animate-skillGlow {
+  animation: skillGlow 3s ease-in-out infinite;
+}
+
+.animate-slideInFromLeft {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.animate-slideInFromRight {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+.animate-rotateIcon {
+  animation: rotateIcon 4s linear infinite;
+}
+
+/* Stars background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.star:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.star:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+/* Typing text effect */
+.typing-text {
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Hover effects */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+}
+
+.nav-item:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Content sections */
+.content-section {
+  position: relative;
+  z-index: 10;
+}
+
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, white, transparent);
+  animation: shooting-star 2s linear infinite;
+  z-index: 1;
+}
+
+.bg-gradient-cosmic {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cosmic-silver);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--star-white);
+}
